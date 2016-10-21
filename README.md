@@ -16,7 +16,7 @@ alias tab_receive='tmux new-session -A -s `dir_name`'
 ```
 
 ## Usage
-Open another terminal tab in the same folder then your current vim session and start `tab_receive`. From vim, you can now call `TabSend your bash command`.
+Open another terminal tab in the same folder then your current vim session and start `tab_receive`. From vim, you can now call `:TabSend your bash command with file %`.
 
 ## Tmux configuration
 
@@ -25,6 +25,15 @@ Be sure to enable the mouse if you are like this.
 ~/.tmux.conf :
 ```
 set -g mouse on
+```
+
+## Examples
+
+This is in my vimrc configuration :
+```VimL
+command RspecFile execute 'TabSend bundle exec rspec --fail-fast --format progress %'
+command RspecLine execute 'TabSend bundle exec rspec --fail-fast --format progress %:' . line('.')
+command RspecAll execute 'TabSend bundle exec rspec --fail-fast --format progress'
 ```
 
 ## License
