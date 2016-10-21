@@ -1,5 +1,7 @@
 # Vim Tab Send
 
+Use this plugin to send bash command to another terminal tab.
+
 This is a plugin inspired by neoterm and vim-dispatch.
 
 ## Installation
