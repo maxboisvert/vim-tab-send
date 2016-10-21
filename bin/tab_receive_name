@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+basename `pwd` | xargs echo -n

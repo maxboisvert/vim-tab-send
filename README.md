@@ -11,10 +11,9 @@ Add the plugin with plug (or your prefered way) :
 Plug 'maxboisvert/vim-simple-complete'
 ```
 
-And add an alias
+And needed scripts to your path :
 ```bash
-alias dir_name='basename `pwd` | xargs echo -n'
-alias tab_receive='tmux new-session -A -s `dir_name`'
+export PATH=$PATH:~/path/to/vim-tab-send/bin
 ```
 
 ## Usage

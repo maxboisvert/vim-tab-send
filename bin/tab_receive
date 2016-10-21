@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+tmux new-session -A -s `tab_receive_name`
