@@ -1,9 +1,43 @@
-# Vim Simple Complete
+# Vim Tab Send
 
-This is a simple vim plugin that add smart tab complete and complete as you type.
+This is a plugin inspired by neoterm and vim-dispatch.
 
 ## Installation
 
-With Plug :
+Add the plugin with plug (or your prefered way) :
+```VimL
+Plug 'maxboisvert/vim-simple-complete'
+```
 
-`Plug 'maxboisvert/vim-simple-complete'`
+And add an alias
+```bash
+alias dir_name='basename `pwd` | xargs echo -n'
+alias tab_receive='tmux new-session -A -s `dir_name`'
+```
+
+## Usage
+Open another terminal tab in the same folder then your current vim session and start `tab_receive`. From vim, you can now call `:TabSend your bash command with file %`.
+
+## Tmux configuration
+
+Be sure to enable the mouse if you are like this.
+
+~/.tmux.conf :
+```
+set -g mouse on
+```
+
+## Examples
+
+This is in my vimrc configuration :
+```VimL
+command RspecFile execute 'TabSend bundle exec rspec --fail-fast --format progress %'
+command RspecLine execute 'TabSend bundle exec rspec --fail-fast --format progress %:' . line('.')
+command RspecAll execute 'TabSend bundle exec rspec --fail-fast --format progress'
+```
+
+## License
+
+Copyright (c) 2016 Maxime Boisvert.
+This program is licensed under the [GPLv3 license][gpl].
+[gpl]: http://www.gnu.org/copyleft/gpl.html
