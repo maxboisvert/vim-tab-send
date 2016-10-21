@@ -8,7 +8,7 @@ This is a plugin inspired by neoterm and vim-dispatch.
 
 Add the plugin with plug (or your prefered way) :
 ```VimL
-Plug 'maxboisvert/vim-simple-complete'
+Plug 'maxboisvert/vim-tab-send'
 ```
 
 And needed scripts to your path :
