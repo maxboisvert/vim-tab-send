@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+tmux send-keys -t `tab_send_name` "$@" c-m

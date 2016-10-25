@@ -2,4 +2,4 @@
 
 set -e
 
-tmux new-session -A -s `tab_receive_name`
+tmux new-session -A -s `tab_send_name`
