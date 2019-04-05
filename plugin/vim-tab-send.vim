@@ -6,7 +6,9 @@ let g:loaded_vim_tab_send = 1
 command! -nargs=1 TabSend call TmuxSend(<f-args>)
 
 fun! TmuxSend(c)
-    let l:user_comment = substitute(a:c, '%', expand('%'), "g")
+    let command = a:c
+    let command = substitute(command, '%', expand('%'), "g")
+    let command = substitute(command, '@', line('.'), "@")
 
-    call system('tab_send ' . l:user_comment)
+    call system('tab_send ' . command)
 endfun
